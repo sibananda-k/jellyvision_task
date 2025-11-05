@@ -1,0 +1,15 @@
+1. Chose Ruby’s built-in Net::HTTP and JSON to keep dependencies minimal and avoid requiring external gems.
+
+2. Pulled public GitHub events from the /users/:username/events/public endpoint since authentication is not required for public data.
+
+3. Grouped events by repository name and counted event types using Ruby’s tally method.
+
+4. Sorted event counts in descending order and selected the top 3 event types per repository as required.
+
+5. Determined user-owned repositories by checking if the repo name starts with "#{username}/".
+
+6. Printed results in a simple CLI-friendly format for readability and ease of testing.
+
+7. Error handling included for HTTP response failure to make the script more robust.
+
+8. Hardcoded sample username (ge0ffrey) to demonstrate expected behavior immediately when running the script.
